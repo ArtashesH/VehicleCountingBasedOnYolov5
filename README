@@ -1,0 +1,37 @@
+Please install python 3.8 + version with pip at first.
+open command line, come to this directory and run this command.
+
+pip install -r requirements.txt
+
+This will install need libraries for yolov5
+
+then from the same command line you can start testing. 
+
+For simple usage please call 
+
+python runYoloV5  --source PicturesForTestYOLOv5
+
+This command will run yolov5L model on all images in folder PicturesForTestYOLOv5, and will save
+results in folder 'resultImages/exp'
+
+If you will call command like this.
+
+python runYoloV5  --source PicturesForTestYOLOv5\1.jpg
+
+it will run on just image 1.jpg, and will save results in folder resultImages/exp
+
+For changing yolov5 model you can call 
+
+python runYoloV5  --source PicturesForTestYOLOv5\1.jpg   --weights yolov5s.pt
+
+For changing confidence threshold you can call
+
+python runYoloV5  --source PicturesForTestYOLOv5\1.jpg  --conf-thres 0.3  (0.3 is any number from 0 to 1)
+
+For changing image size you can call
+
+python runYoloV5  --source PicturesForTestYOLOv5\1.jpg  --img-size 480 (480 is any size )
+
+For changing detected class  list you can call
+
+python runYoloV5  --source PicturesForTestYOLOv5\1.jpg  --class  5 7 (where 5  and 7  are indexes of labels between 0 and 79, on our case we get 2  and 7 , which are car and truck )
